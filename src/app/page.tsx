@@ -1,7 +1,8 @@
-import Image from 'next/image';
+import DashboardComponent from '@/components/dashboard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import DashboardComponent from '@/components/Dashboard/layout';
-import InvoicesComponent from '@/components/Invoices/layout';
+
+import { Combobox } from '@/components/combobox';
+import { InvoicesComponent } from '@/components/invoices';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <TabsList>
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="invoices">Biblioteca de Faturas</TabsTrigger>
+          <Combobox />
         </TabsList>
         <TabsContent value="dashboard">
           <DashboardComponent />
