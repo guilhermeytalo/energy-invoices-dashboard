@@ -1,15 +1,5 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { DataTable } from './table/data-table';
 import { columns } from './table/columns';
+import { DataTable } from './table/data-table';
 
 interface InvoiceProps<TData> {
   invoices: TData[];
@@ -18,11 +8,9 @@ interface InvoiceProps<TData> {
 const invoices = [
   {
     id: 'INV001',
-    title: 'Paid',
-    status: 'Paid',
-    label: 'algo',
-    totalAmount: '$250.00',
-    paymentMethod: 'Credit Card',
+    title: 'invoice',
+    status: 'pago',
+    totalAmount: '$250.00', 
   },
 ];
 

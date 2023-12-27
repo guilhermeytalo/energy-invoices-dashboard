@@ -39,7 +39,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "id",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Task" />
+      <DataTableColumnHeader column={column} title="Id" />
     ),
     cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
     enableSorting: false,
@@ -48,10 +48,10 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "title",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Title" />
+      <DataTableColumnHeader column={column} title="Título" />
     ),
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label)
+      const label = labels.find((label) => label.value === row.original.title)
 
       return (
         <div className="flex space-x-2">
@@ -91,67 +91,13 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: "label",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Label" />
-    ),
-    cell: ({ row }) => {
-      const priority = priorities.find(
-        (priority) => priority.value === row.getValue("label")
-      )
-
-      if (!priority) {
-        return null
-      }
-
-      return (
-        <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{priority.label}</span>
-        </div>
-      )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
-    },
-  },
-  {
     accessorKey: "totalAmount",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="TotalAmount" />
+      <DataTableColumnHeader column={column} title="Total" />
     ),
     cell: ({ row }) => {
       const priority = priorities.find(
         (priority) => priority.value === row.getValue("totalAmount")
-      )
-
-      if (!priority) {
-        return null
-      }
-
-      return (
-        <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{priority.label}</span>
-        </div>
-      )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
-    },
-  },
-  {
-    accessorKey: "paymentMethod",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="PaymentMethod" />
-    ),
-    cell: ({ row }) => {
-      const priority = priorities.find(
-        (priority) => priority.value === row.getValue("paymentMethod")
       )
 
       if (!priority) {

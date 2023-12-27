@@ -6,9 +6,7 @@ export const taskSchema = z.object({
   id: z.string(),
   title: z.string(),
   status: z.string(),
-  label: z.string(),
   totalAmount: z.string(),
-  paymentMethod: z.string(),
 })
 
 export type Task = z.infer<typeof taskSchema>
