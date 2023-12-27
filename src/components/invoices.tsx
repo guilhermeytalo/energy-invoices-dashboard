@@ -1,10 +1,6 @@
 import { columns } from './table/columns';
 import { DataTable } from './table/data-table';
 
-interface InvoiceProps<TData> {
-  invoices: TData[];
-}
-
 const invoices = [
   {
     id: 'INV001',

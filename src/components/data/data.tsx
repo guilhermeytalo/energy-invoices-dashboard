@@ -2,11 +2,8 @@ import {
     ArrowDownIcon,
     ArrowRightIcon,
     ArrowUpIcon,
-    CheckCircledIcon,
     CircleIcon,
-    CrossCircledIcon,
-    QuestionMarkCircledIcon,
-    StopwatchIcon,
+    CheckIcon,
   } from "@radix-ui/react-icons"
   
   export const labels = [
@@ -26,29 +23,14 @@ import {
   
   export const statuses = [
     {
-      value: "backlog",
-      label: "Backlog",
-      icon: QuestionMarkCircledIcon,
+      value: "pago",
+      label: "Pago",
+      icon: CheckIcon,
     },
     {
-      value: "todo",
-      label: "Todo",
+      value: "não pago",
+      label: "Não Pago",
       icon: CircleIcon,
-    },
-    {
-      value: "in progress",
-      label: "In Progress",
-      icon: StopwatchIcon,
-    },
-    {
-      value: "done",
-      label: "Done",
-      icon: CheckCircledIcon,
-    },
-    {
-      value: "canceled",
-      label: "Canceled",
-      icon: CrossCircledIcon,
     },
   ]
   

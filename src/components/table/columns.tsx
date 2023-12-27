@@ -72,6 +72,7 @@ export const columns: ColumnDef<Task>[] = [
       const status = statuses.find(
         (status) => status.value === row.getValue("status")
       )
+      console.log('tem status', statuses)
 
       if (!status) {
         return null
@@ -97,19 +98,15 @@ export const columns: ColumnDef<Task>[] = [
     ),
     cell: ({ row }) => {
       const priority = priorities.find(
-        (priority) => priority.value === row.getValue("totalAmount")
+        (priority) => priority.value === row.original.totalAmount
       )
-
-      if (!priority) {
-        return null
-      }
 
       return (
         <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{priority.label}</span>
+          {priority && <Badge variant="outline">{priority.label}</Badge>}
+          <span className='maxpx-[500px] truncate font-medium'>
+            {row.getValue("totalAmount")}
+            </span>
         </div>
       )
     },
