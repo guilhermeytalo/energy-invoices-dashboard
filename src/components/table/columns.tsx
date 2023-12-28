@@ -72,7 +72,6 @@ export const columns: ColumnDef<Task>[] = [
       const status = statuses.find(
         (status) => status.value === row.getValue("status")
       )
-      console.log('tem status', statuses)
 
       if (!status) {
         return null
